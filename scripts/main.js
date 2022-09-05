@@ -11,14 +11,14 @@ request.onload = function() {
             return '<tr>' +
                 '<td>' + i.subject + '</td>' +
                 '<td>' + i.name + '</td>' +
-                // '<td>' + i.maker + '</td>' +
-                // '<td>' + i.release + '</td>' +
-                // '<td>' + i.price + '</td>' +
+                '<td>' + i.credit + '</td>' +
+                '<td>' + i.textbook_flg + '</td>' +
+                '<td>' + '<a href="' + i.sylabus_link + '">' + i.sylabus_link + ' </a></td> ' +
                 // '<td>' + i.sales + '</td>' +
                 '</tr>';
         })
         .join('');
-    src = '<table>' + src + '</table>';
+    src = '<table class="table table-bordered">' + src + '</table>';
     console.log(src);
 
     const res = document.getElementById('result');
