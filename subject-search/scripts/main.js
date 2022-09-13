@@ -1,23 +1,33 @@
-function hoge() {
-
-
-    let src = response.map(function(i) {
-            return '<tr>' +
-                '<td>' + i.subject + '</td>' +
-                '<td>' + i.name + '</td>' +
-                '<td>' + i.credit + '</td>' +
-                '<td>' + i.textbook_flg + '</td>' +
-                '<td>' + '<a href="' + i.sylabus_link + '">' + i.sylabus_link + ' </a></td> ' +
-                // '<td>' + i.sales + '</td>' +
-                '</tr>';
+const hoge = async() => {
+    const url = "data.json";
+    const data = await fetch(url).then(res => res.json());
+    console.log(data);
+    week_arr = getWeekChekbox();
+    let src = data.map(function(i) {
+            for (let j = 0; j < week_arr.length; j++) {
+                if (i.week === week_arr[j]) {
+                    return '<tr>' +
+                        '<td>' + i.subject + '</td>' +
+                        '<td>' + i.name + '</td>' +
+                        '<td>' + i.credit + '</td>' +
+                        '<td>' + i.textbook_flg + '</td>' +
+                        '<td>' + '<a href="' + i.sylabus_link + '">' + i.sylabus_link + ' </a></td> ' +
+                        // '<td>' + i.sales + '</td>' +
+                        '</tr>';
+                }
+            }
         })
         .join('');
-    src = '<table class="table table-bordered">' + src + '</table>';
+    src = '<table class="table table-bordered">' + '<th>a</th>' +
+        '<th>a</th>' +
+        '<th>a</th>' +
+        '<th>a</th>' +
+        '<th>a</th>' + src + '</table>';
     console.log(src);
 
     const res = document.getElementById('result');
     res.innerHTML = src;
-}
+};
 
 function getWeekChekbox() {
     const arr = [];
@@ -29,6 +39,7 @@ function getWeekChekbox() {
     }
     return arr;
 }
+
 
 
 
