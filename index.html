@@ -48,7 +48,7 @@
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+                    <img height="32" class="me-2" src="./logo.png">
                     <span class="fs-4">Manna</span>
                 </a>
 
@@ -61,15 +61,114 @@
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-4 fw-normal">シラバス検索</h1>
+                <h1 class="display-4 fw-normal">2022年度後期授業検索</h1>
                 <p class="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
             </div>
+            <h6>講義名</h6>
+            <form name="form_subject">
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">科目名•科目名の一部(漢字/英文)</div>
+                </div>
+            </form>
+
+            <h6>教員名</h6>
+            <form name="form_name">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>教員を選んでください</option>
+                    <option value="1">Glocal office</option>
+                    <option value="2">ｳｨﾘｱﾑﾌﾞﾗｳﾝ</option>
+                    <option value="3">ｳｪｲﾝﾍﾟﾆﾝﾄﾝ</option>
+                </select>
+            </form>
+
+            <h6>曜日</h6>
+            <form name="form_week">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="chk1" value="1"> 月
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="2" name="chk1"> 火
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="3" name="chk1"> 水
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="4" name="chk1"> 木
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="5" name="chk1"> 金
+                </div>
+            </form>
+
+            <h6>時限</h6>
+            <form name="form_period">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="chk1" value="1"> 1
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="2" name="chk1"> 2
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="3" name="chk1"> 3
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="4" name="chk1"> 4
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="5" name="chk1"> 5
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="5" name="chk1"> 6
+                </div>
+            </form>
+
+            <h6>学期</h6>
+            <form name="form_semester">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="chk1" value="1"> 前期
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="2" name="chk1"> 後期
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="3" name="chk1"> 通年
+                </div>
+            </form>
+
+            <h6>単位</h6>
+            <form name="form_credit">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="chk1" value="1">0
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="2" name="chk1"> 1
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="3" name="chk1"> 2
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="4" name="chk1">4
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="4" name="chk1">6
+                </div>
+            </form>
+
+            <h6>教科書有無</h6>
+            <form name="form_textbook_flg">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">教科書</label>
+                </div>
+            </form>
         </header>
 
         <main>
             <div class="row">
                 <div class="col text-center">
-                    <button type="button" class="btn btn-primary" onclick="request.send()">検索</button>
+                    <!--<button type="button" class="btn btn-primary" onclick="request.send()">検索</button>-->
+                    <button type="button" class="btn btn-primary" onclick="hoge()">検索</button>
                 </div>
             </div>
             <h2 class="display-6 text-center mb-4">Compare plans</h2>
