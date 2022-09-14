@@ -67,14 +67,14 @@
             <h6>講義名</h6>
             <form name="form_subject">
                 <div class="mb-3">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">科目名•科目名の一部(漢字/英文)</div>
+                    <input type="text" class="form-control" id="input_text">
+                    <div id="text_help" class="form-text">科目名•科目名の一部(漢字/英文)</div>
                 </div>
             </form>
 
             <h6>教員名</h6>
             <form name="form_name">
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="t_name">
                     <option selected>教員を選んでください</option>
                     <option value="0">髙橋　かおり</option>
                     <option value="1">鷲見　辰美</option>
@@ -270,7 +270,7 @@
             <h6>教科書</h6>
             <form name="form_textbook_flg">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="chk1" value="1">
                     <label class="form-check-label" for="flexSwitchCheckDefault">教科書あり</label>
                 </div>
             </form>
