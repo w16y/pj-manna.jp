@@ -48,8 +48,8 @@ const dataFilter = async() => {
     console.log(semester_list);
     let credit_list = getCreditCheckbox();
     console.log(credit_list);
-    let textbook_flg = getTextbookFlgSwiches();
-    console.log(textbook_flg);
+    let textbook_flg_list = getTextbookFlgSwiches();
+    console.log(textbook_flg_list);
 
     let filtered_data = data;
 
@@ -73,6 +73,12 @@ const dataFilter = async() => {
             filtered_data = filtered_data.filter(d => d.credit === credit_list[i]);
         }
     }
+    if (textbook_flg_list > 0) {
+        for (let i = 0; i < textbook_flg_list.length; i++) {
+            filtered_data = filtered_data.filter(d => d.credit === textbook_flg_list[i]);
+        }
+    }
+
 
     /*
     let src = data.map(function(i) {
