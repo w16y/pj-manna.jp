@@ -49,7 +49,7 @@ const dataFilter = async() => {
     console.log(semester_list);
     let credit_list = getCreditCheckbox();
     console.log(credit_list);
-    let textbook_flg_list = getTextbookFlgSwiches();
+    let textbook_flg_list = getTextbookFlgCheckbox();
     console.log(textbook_flg_list);
 
     let filtered_data = data;
@@ -74,9 +74,9 @@ const dataFilter = async() => {
             filtered_data = filtered_data.filter(d => d.credit === credit_list[i]);
         }
     }
-    if (textbook_flg_list > 0) {
+    if (textbook_flg_list >= 0) {
         for (let i = 0; i < textbook_flg_list.length; i++) {
-            filtered_data = filtered_data.filter(d => d.credit === textbook_flg_list[i]);
+            filtered_data = filtered_data.filter(d => d.textbook_flg === textbook_flg_list[i]);
         }
     }
 
@@ -159,7 +159,7 @@ function getCreditCheckbox() {
     return arr;
 }
 
-function getTextbookFlgSwiches() {
+function getTextbookFlgCheckbox() {
     const arr = [];
     const chk1 = document.form_textbook_flg.chk1;
     for (let i = 0; i < chk1.length; i++) {
