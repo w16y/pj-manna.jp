@@ -6,6 +6,7 @@ const initialize = async() => {
 
 function draw(data) {
     const week_list = ['', '月', '火', '水', '木', '金'];
+    const textbook_flg_list = ['なし', 'あり'];
     let src = data.map(function(i) {
         return '<tr>' +
             '<td>' + week_list[i.week] + '</td>' +
@@ -13,7 +14,7 @@ function draw(data) {
             '<td>' + i.subject + '</td>' +
             '<td>' + i.name + '</td>' +
             '<td>' + i.credit + '</td>' +
-            '<td>' + i.textbook_flg + '</td>' +
+            '<td>' + textbook_flg_list[i.textbook_flg] + '</td>' +
             '<td>' + '<a href="' + i.sylabus_link + '">' + i.sylabus_link + ' </a></td> ' +
             '</tr>';
     }).join('');
