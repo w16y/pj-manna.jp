@@ -33,8 +33,8 @@ function draw(data) {
 const dataFilter = async() => {
     const url = "./data.json";
     const data = await fetch(url).then(res => res.json());
-    const text = document.getElementById('input_text').value;
-    console.log(text);
+    let subject_text = getSubjectForm();
+    console.log(subject_text);
     let nameSelect = document.getElementById('t_name');
     let idx = nameSelect.selectedIndex;
     let txt = nameSelect.options[idx].text;
@@ -52,6 +52,11 @@ const dataFilter = async() => {
     console.log(textbook_flg);
 
     let filtered_data = data;
+
+    if (subject_text.length > 0) {
+        console.log('here');
+        filtered_data = filtered_data.filter(d => d.subject.match(new RegExp(subject_text,'g')));
+    }
 
     if (week_list > 0) {
         for (let i = 0; i < week_list.length; i++) {
@@ -99,8 +104,8 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function getSubjectForm() {
-    const textbox = document.getElementById("input-text");
-    const inputValue = textbox.value;
+    const textbox = document.querySelector("#input_text").value;
+    return textbox;
 }
 
 function getNameForm() {
