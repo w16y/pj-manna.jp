@@ -36,10 +36,8 @@ const dataFilter = async() => {
     const data = await fetch(url).then(res => res.json());
     const text = document.getElementById('input_text').value;
     console.log(text);
-    let nameSelect = document.getElementById('t_name');
-    let idx = nameSelect.selectedIndex;
-    let txt = nameSelect.options[idx].text;
-    console.log(`${txt}`);
+    const name_value = getNameForm();
+    console.log(name_value);
     //const nameSelect = document.getElementById('t_name').value;
     let week_list = getWeekCheckbox();
     console.log(week_list);
@@ -53,7 +51,11 @@ const dataFilter = async() => {
     console.log(textbook_flg_list);
 
     let filtered_data = data;
-
+    if (name_value.length > 0) {
+        console.log(name_value.length);
+        console.log(filtered_data.name);
+        filtered_data = filtered_data.filter(d => d.name === name_value);
+    }
     if (week_list > 0) {
         for (let i = 0; i < week_list.length; i++) {
             filtered_data = filtered_data.filter(d => d.week === week_list[i]);
@@ -69,7 +71,7 @@ const dataFilter = async() => {
             filtered_data = filtered_data.filter(d => d.semester === semester_list[i]);
         }
     }
-    if (credit_list > 0) {
+    if (credit_list >= 0) {
         for (let i = 0; i < credit_list.length; i++) {
             filtered_data = filtered_data.filter(d => d.credit === credit_list[i]);
         }
@@ -111,8 +113,11 @@ function getSubjectForm() {
 }
 
 function getNameForm() {
-    let nameSelect = document.getElementById('t_name');
-    nameSelect.options[2].selected = true;
+    let value = document.querySelector("#t_name").value;
+    if (value === '教員を選んでください') {
+        value = '';
+    }
+    return value;
 }
 
 function getWeekCheckbox() {
