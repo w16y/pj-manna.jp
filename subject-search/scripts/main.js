@@ -51,11 +51,20 @@ const dataFilter = async() => {
     console.log(textbook_flg_list);
 
     let filtered_data = data;
+
     if (name_value.length > 0) {
         console.log(name_value.length);
         console.log(filtered_data.name);
         filtered_data = filtered_data.filter(d => d.name === name_value);
     }
+
+
+    if (subject_text.length > 0) {
+        console.log('here');
+        filtered_data = filtered_data.filter(d => d.subject.match(new RegExp(subject_text,'g')));
+    }
+
+
     if (week_list > 0) {
         for (let i = 0; i < week_list.length; i++) {
             filtered_data = filtered_data.filter(d => d.week === week_list[i]);
@@ -108,8 +117,8 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function getSubjectForm() {
-    const textbox = document.getElementById("input-text");
-    const inputValue = textbox.value;
+    const textbox = document.querySelector("#input_text").value;
+    return textbox;
 }
 
 function getNameForm() {
