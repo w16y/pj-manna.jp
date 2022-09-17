@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6N6TT5G4D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-K6N6TT5G4D');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -39,19 +52,6 @@
     <script src="./scripts/main.js">
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6N6TT5G4D"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-K6N6TT5G4D');
-    </script>
-
 </head>
 
 <body>
@@ -65,8 +65,9 @@
             </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-4 fw-normal">2022年度後期授業検索</h1>
-                <p class="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+                <h1 class="display-4 fw-normal">共愛学園前橋国際大学
+                    <br>授業検索 </h1>
+                <p class="fs-5 text-muted">2022年度後期</p>
             </div>
             <h6>講義名</h6>
             <form name="form_subject">
@@ -240,9 +241,9 @@
 
             <h6>学期</h6>
             <form name="form_semester">
-                <div class="form-check form-check-inline">
+                <!-- <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" value="1" name="chk1"> 前期
-                </div>
+                </div> -->
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" value="2" name="chk1"> 後期
                 </div>
