@@ -6,6 +6,7 @@ const initialize = async() => {
 
 function draw(data) {
     const week_list = ['', '月', '火', '水', '木', '金'];
+    const textbook_flg_list = ['なし', 'あり'];
     let src = data.map(function(i) {
         return '<tr>' +
             '<td>' + week_list[i.week] + '</td>' +
@@ -13,7 +14,7 @@ function draw(data) {
             '<td>' + i.subject + '</td>' +
             '<td>' + i.name + '</td>' +
             '<td>' + i.credit + '</td>' +
-            '<td>' + i.textbook_flg + '</td>' +
+            '<td>' + textbook_flg_list[i.textbook_flg] + '</td>' +
             '<td>' + '<a href="' + i.sylabus_link + '">' + i.sylabus_link + ' </a></td> ' +
             '</tr>';
     }).join('');
@@ -33,12 +34,10 @@ function draw(data) {
 const dataFilter = async() => {
     const url = "./data.json";
     const data = await fetch(url).then(res => res.json());
-    let subject_text = getSubjectForm();
-    console.log(subject_text);
-    let nameSelect = document.getElementById('t_name');
-    let idx = nameSelect.selectedIndex;
-    let txt = nameSelect.options[idx].text;
-    console.log(`${txt}`);
+    const text = document.getElementById('input_text').value;
+    console.log(text);
+    const name_value = getNameForm();
+    console.log(name_value);
     //const nameSelect = document.getElementById('t_name').value;
     let week_list = getWeekCheckbox();
     console.log(week_list);
@@ -48,15 +47,23 @@ const dataFilter = async() => {
     console.log(semester_list);
     let credit_list = getCreditCheckbox();
     console.log(credit_list);
-    let textbook_flg = getTextbookFlgSwiches();
-    console.log(textbook_flg);
+    let textbook_flg_list = getTextbookFlgCheckbox();
+    console.log(textbook_flg_list);
 
     let filtered_data = data;
+
+    if (name_value.length > 0) {
+        console.log(name_value.length);
+        console.log(filtered_data.name);
+        filtered_data = filtered_data.filter(d => d.name === name_value);
+    }
+
 
     if (subject_text.length > 0) {
         console.log('here');
         filtered_data = filtered_data.filter(d => d.subject.match(new RegExp(subject_text,'g')));
     }
+
 
     if (week_list > 0) {
         for (let i = 0; i < week_list.length; i++) {
@@ -73,11 +80,17 @@ const dataFilter = async() => {
             filtered_data = filtered_data.filter(d => d.semester === semester_list[i]);
         }
     }
-    if (credit_list > 0) {
+    if (credit_list >= 0) {
         for (let i = 0; i < credit_list.length; i++) {
             filtered_data = filtered_data.filter(d => d.credit === credit_list[i]);
         }
     }
+    if (textbook_flg_list >= 0) {
+        for (let i = 0; i < textbook_flg_list.length; i++) {
+            filtered_data = filtered_data.filter(d => d.textbook_flg === textbook_flg_list[i]);
+        }
+    }
+
 
     /*
     let src = data.map(function(i) {
@@ -109,8 +122,11 @@ function getSubjectForm() {
 }
 
 function getNameForm() {
-    let nameSelect = document.getElementById('t_name');
-    nameSelect.options[2].selected = true;
+    let value = document.querySelector("#t_name").value;
+    if (value === '教員を選んでください') {
+        value = '';
+    }
+    return value;
 }
 
 function getWeekCheckbox() {
@@ -157,7 +173,7 @@ function getCreditCheckbox() {
     return arr;
 }
 
-function getTextbookFlgSwiches() {
+function getTextbookFlgCheckbox() {
     const arr = [];
     const chk1 = document.form_textbook_flg.chk1;
     for (let i = 0; i < chk1.length; i++) {
