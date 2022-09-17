@@ -1,10 +1,12 @@
+//初期データ表示
 const initialize = async() => {
     const url = "./data.json";
     const data = await fetch(url).then(res => res.json());
     draw(data);
 };
-
+//テーブル表示
 function draw(data) {
+    console.log("data", data);
     const week_list = ['', '月', '火', '水', '木', '金'];
     const textbook_flg_list = ['なし', 'あり'];
     let src = data.map(function(i) {
@@ -25,70 +27,128 @@ function draw(data) {
         '<th>教員名</th>' +
         '<th>単位</th>' +
         '<th>教科書有無</th>' +
+        '<th>シラバス</th>' +
         src +
         '</table>';
     const res = document.getElementById('result');
     res.innerHTML = src;
 }
-
+//データのフィルター
 const dataFilter = async() => {
     const url = "./data.json";
     const data = await fetch(url).then(res => res.json());
-    const text = document.getElementById('input_text').value;
-    console.log(text);
+    // 講義名
+    const subject_text = getSubjectForm();
+    console.log("subject_text", subject_text);
+    // 教員名
     const name_value = getNameForm();
-    console.log(name_value);
-    //const nameSelect = document.getElementById('t_name').value;
+    console.log("name_value", name_value);
+    // 曜日
     let week_list = getWeekCheckbox();
-    console.log(week_list);
+    console.log("week_list", week_list);
+    // 時限
     let period_list = getPeriodCheckbox();
-    console.log(period_list);
+    console.log("period_list", period_list);
+    // 学期
     let semester_list = getSemesterCheckbox();
-    console.log(semester_list);
+    console.log("semester_list", semester_list);
+    // 単位
     let credit_list = getCreditCheckbox();
-    console.log(credit_list);
+    console.log("credit_list", credit_list);
+    // 教科書有無
     let textbook_flg_list = getTextbookFlgCheckbox();
-    console.log(textbook_flg_list);
+    console.log("textbook_flg_list", textbook_flg_list);
+
+    // gtag('event', 'searchbutton_click', {
+    //     'subject': subject_text,
+    //     'name': name_value,
+    //     'week': week_list.toString(),
+    //     'period': period_list.toString(),
+    //     'semester': semester_list.toString(),
+    //     'credit': credit_list.toString(),
+    //     'textbook_flg': textbook_flg_list.toString()
+    // });
 
     let filtered_data = data;
+    console.log("filtered_data", filtered_data);
 
+    //講義名フィルター
+    if (subject_text.length > 0) {
+        console.log('here');
+        filtered_data = filtered_data.filter(d => d.subject.match(new RegExp(subject_text, 'g')));
+    }
+    console.log("filtered_data1", filtered_data);
+    //教員名フィルター
     if (name_value.length > 0) {
         console.log(name_value.length);
         console.log(filtered_data.name);
         filtered_data = filtered_data.filter(d => d.name === name_value);
     }
+    console.log("filtered_data2", filtered_data);
+    //曜日フィルター
+    //if (week_list.length > 0) {
+    //     let temp = [];
+    //     let temp2 = [];
+    //     for (let i = 0; i < week_list.length; i++) {
+    //         temp[i] = filtered_data.filter(d => d.week === week_list[i]);
+    //     }
+    //     console.log(temp);
+    //     for (let i = 0; i < temp.length; i++) {
+    //         for (let j = 0; j < temp[i].length; j++) {
+    //             temp2.push(temp[i][j]);
+    //         }
+    //     }
+    //     console.log(temp2);
+    //     filtered_data = temp2;
+    // }
+    if (week_list.length > 0) {
+        filtered_data = ListFilter(filtered_data, week_list, 'week');
+    }
+    console.log("filtered_data3", filtered_data);
+
+    //時限フィルター
+    if (period_list.length > 0) {
+        filtered_data = ListFilter(filtered_data, period_list, 'period');
+    }
+    console.log("filtered_data4", filtered_data);
+
+    //学期フィルター
+    if (semester_list.length > 0) {
+        filtered_data = ListFilter(filtered_data, semester_list, 'semester');
+    }
+    console.log("filtered_data5", filtered_data);
+
+    //単位フィルター
+    if (credit_list.length > 0) {
+        filtered_data = ListFilter(filtered_data, credit_list, 'credit');
+    }
+    console.log("filtered_data6", filtered_data);
+
+    //教科書有無フィルター
+    if (textbook_flg_list.length > 0) {
+        filtered_data = ListFilter(filtered_data, textbook_flg_list, 'textbook_flg');
+    }
+    console.log("filtered_data7", filtered_data);
 
 
-    if (subject_text.length > 0) {
-        console.log('here');
-        filtered_data = filtered_data.filter(d => d.subject.match(new RegExp(subject_text,'g')));
-    }
 
 
-    if (week_list > 0) {
-        for (let i = 0; i < week_list.length; i++) {
-            filtered_data = filtered_data.filter(d => d.week === week_list[i]);
+    function ListFilter(rawdata, condition_list, key_name) {
+        let temp1 = [];
+        let temp2 = [];
+        if (condition_list.length > 0) {
+            for (let i = 0; i < condition_list.length; i++) {
+                temp1[i] = rawdata.filter(d => d[key_name] === condition_list[i]);
+            }
+            console.log(temp1);
+            for (let i = 0; i < temp1.length; i++) {
+                for (let j = 0; j < temp1[i].length; j++) {
+                    temp2.push(temp1[i][j]);
+                }
+            }
+            console.log(temp2);
         }
-    }
-    if (period_list > 0) {
-        for (let i = 0; i < period_list.length; i++) {
-            filtered_data = filtered_data.filter(d => d.period === period_list[i]);
-        }
-    }
-    if (semester_list > 0) {
-        for (let i = 0; i < semester_list.length; i++) {
-            filtered_data = filtered_data.filter(d => d.semester === semester_list[i]);
-        }
-    }
-    if (credit_list >= 0) {
-        for (let i = 0; i < credit_list.length; i++) {
-            filtered_data = filtered_data.filter(d => d.credit === credit_list[i]);
-        }
-    }
-    if (textbook_flg_list >= 0) {
-        for (let i = 0; i < textbook_flg_list.length; i++) {
-            filtered_data = filtered_data.filter(d => d.textbook_flg === textbook_flg_list[i]);
-        }
+        return temp2;
     }
 
 
@@ -111,16 +171,16 @@ const dataFilter = async() => {
     */
     draw(filtered_data);
 };
-
+//画面読み込み後実行
 window.addEventListener('DOMContentLoaded', () => {
     initialize();
 });
-
+//講義名情報取得
 function getSubjectForm() {
     const textbox = document.querySelector("#input_text").value;
     return textbox;
 }
-
+//教員名情報取得
 function getNameForm() {
     let value = document.querySelector("#t_name").value;
     if (value === '教員を選んでください') {
@@ -128,7 +188,7 @@ function getNameForm() {
     }
     return value;
 }
-
+//曜日情報取得
 function getWeekCheckbox() {
     const arr = [];
     const chk1 = document.form_week.chk1;
@@ -139,7 +199,7 @@ function getWeekCheckbox() {
     }
     return arr;
 }
-
+//時限情報取得
 function getPeriodCheckbox() {
     const arr = [];
     const chk1 = document.form_period.chk1;
@@ -150,7 +210,7 @@ function getPeriodCheckbox() {
     }
     return arr;
 }
-
+//学期情報取得
 function getSemesterCheckbox() {
     const arr = [];
     const chk1 = document.form_semester.chk1;
@@ -161,7 +221,7 @@ function getSemesterCheckbox() {
     }
     return arr;
 }
-
+//単位情報取得
 function getCreditCheckbox() {
     const arr = [];
     const chk1 = document.form_credit.chk1;
@@ -172,7 +232,7 @@ function getCreditCheckbox() {
     }
     return arr;
 }
-
+//教科書有無情報取得
 function getTextbookFlgCheckbox() {
     const arr = [];
     const chk1 = document.form_textbook_flg.chk1;
