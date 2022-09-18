@@ -42,6 +42,17 @@
             user-select: none;
         }
         
+        .pj-explanation {
+            font-size: 0.9rem;
+        }
+        
+        .pj-query {
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -288,13 +299,15 @@
                     <button type="button" class="btn btn-primary" onclick="dataFilter()">検索</button>
                 </div>
             </div>
-            <h2 class="display-6 text-center mb-4">Compare plans</h2>
+            <br>
 
             <div id="result"></div>
 
         </main>
 
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <p class="pj-explanation">Mannaとは… <br> Mannaは共愛学園前橋国際大学の学生プロジェクトです。2022年から前橋国際大学の学生に向けて活動を行っています。Mannaは学生視点で学生生活における不便な点を解消する様々なサービスを開発し、提供します。活動をするうえで「楽しいモノづくりで学生生活を便利にする」ことによって「学生生活の無駄な時間を減らす」ことを目指しています。</p>
+            <a class="pj-query" href=" https://docs.google.com/forms/d/e/1FAIpQLScig8-v8aIvBiOc-zlmrkCxs7-q8qWIpSzTI8UKiAPHE2kQig/viewform ">お問合わせ</a>
         </footer>
     </div>
 </body>
