@@ -22,7 +22,7 @@ function draw(data) {
     }).join('');
     src = '<table class="table table-bordered">' +
         '<th>曜日</th>' +
-        '<th>単位</th>' +
+        '<th>時限</th>' +
         '<th>講義名</th>' +
         '<th>教員名</th>' +
         '<th>単位</th>' +
