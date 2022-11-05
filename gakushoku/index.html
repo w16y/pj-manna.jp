@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manna</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .container {
+            max-width: 960px;
+        }
+        
+        .pricing-header {
+            max-width: 700px;
+        }
+        
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        .pj-explanTitle {
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .pj-explan {
+            font-size: 0.9rem;
+        }
+        
+        .pj-query {
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!--  css  -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container py-3">
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img height="32" class="me-2" src="logo.png">
+                    <span class="fs-4">Manna</span>
+                </a>
+            </div>
+        </header>
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h2 class="display-4 fw-normal">共愛学園前橋国際大学
+                <br>学食情報</h2>
+        </div>
+
+        <!-- 日付だけ変更 -->
+        <h3 class="title_1">日替わりメニュー(11/8~11/11)</h3>
+
+        <!-- ここから表 -->
+        <p class="daily_menu">
+            <table class="Table">
+                <thead class="Table-Head">
+                    <tr class="Table-Head-Row">
+                        <th class="Table-Head-Row-Cell">曜日</th>
+                        <th class="Table-Head-Row-Cell">定食　500円</th>
+                        <th class="Table-Head-Row-Cell">丼ぶり　480円</th>
+                    </tr>
+                </thead>
+                <tbody class="Table-Body">
+                    <tr class="Table-Body-Row">
+                        <td class="Table-Body-Row-Cell">月</td>
+                        <td class="Table-Body-Row-Cell">エビフライ定食</td>
+                        <td class="Table-Body-Row-Cell">ツナレタス丼</td>
+                    </tr>
+                    <tr class="Table-Body-Row">
+                        <td class="Table-Body-Row-Cell">火</td>
+                        <td class="Table-Body-Row-Cell">ハンバーググラタン定食</td>
+                        <td class="Table-Body-Row-Cell">そぼろ温玉丼</td>
+                    </tr>
+                    <tr class="Table-Body-Row">
+                        <td class="Table-Body-Row-Cell">水</td>
+                        <td class="Table-Body-Row-Cell">チキンカツ煮定食</td>
+                        <td class="Table-Body-Row-Cell">タコライス丼</td>
+                    </tr>
+                    <tr class="Table-Body-Row">
+                        <td class="Table-Body-Row-Cell">木</td>
+                        <td class="Table-Body-Row-Cell">おろし唐揚げ定食</td>
+                        <td class="Table-Body-Row-Cell">ネギチャーシュー丼</td>
+                    </tr>
+                    <tr class="Table-Body-Row">
+                        <td class="Table-Body-Row-Cell">金</td>
+                        <td class="Table-Body-Row-Cell">鶏チリ定食</td>
+                        <td class="Table-Body-Row-Cell">親子丼</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </p>
+
+        <h3 class="title_2">通常メニュー</h3>
+        <div class="image-contents">
+            <figure><img src="image/カレーライス.jpg" alt="カレー">
+                <figcaption>
+                    <p class="menu_title">カレー</p>
+                    <p><span class="menu_price">420</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/noimage.jpg" alt="パスタ">
+                <figcaption>
+                    <p class="menu_title">パスタ</p>
+                    <p><span class="menu_price">420</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/うどん.jpg" alt="うどん">
+                <figcaption>
+                    <p class="menu_title">うどん</p>
+                    <p><span class="menu_price">380</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/そば.jpg" alt="そば">
+                <figcaption>
+                    <p class="menu_title">そば</p>
+                    <p><span class="menu_price">380</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/味噌ラーメン.jpg" alt="味噌ラーメン">
+                <figcaption>
+                    <p class="menu_title">味噌ラーメン</p>
+                    <p><span class="menu_price">400</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/noimage.jpg" alt="冷やし中華">
+                <figcaption>
+                    <p class="menu_title">冷やし中華</p>
+                    <p><span class="menu_price">400</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/山菜うどん.jpg" alt="山菜うどん・そば">
+                <figcaption>
+                    <p class="menu_title">山菜うどん・そば</p>
+                    <p><span class="menu_price">400</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/カレーうどん.jpg" alt="カレーうどん">
+                <figcaption>
+                    <p class="menu_title">カレーうどん</p>
+                    <p><span class="menu_price">400</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/カレーラーメン.jpg" alt="カレーラーメン">
+                <figcaption>
+                    <p class="menu_title">カレーラーメン</p>
+                    <p><span class="menu_price">380</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/醤油ラーメン.jpg" alt="醤油ラーメン">
+                <figcaption>
+                    <p class="menu_title">醤油ラーメン</p>
+                    <p><span class="menu_price">380</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/noimage.jpg" alt="和風ラーメン">
+                <figcaption>
+                    <p class="menu_title">和風ラーメン</p>
+                    <p><span class="menu_price">380</span>円</p>
+                </figcaption>
+            </figure>
+
+            <figure><img src="image/noimage.jpg" alt="グラタン・ドリア">
+                <figcaption>
+                    <p class="menu_title">グラタン・ドリア</p>
+                    <p><span class="menu_price">380</span>円</p>
+                </figcaption>
+            </figure>
+        </div>
+
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <p class="pj-explanTitle">Mannaとは…</p>
+            <p class="pj-explan">Mannaは共愛学園前橋国際大学の学生プロジェクトです。2022年から前橋国際大学の学生に向けて活動を行っています。Mannaは学生視点で学生生活における不便な点を解消する様々なサービスを開発し、提供します。活動をするうえで「楽しいモノづくりで学生生活を便利にする」ことによって「学生生活の無駄な時間を減らす」ことを目指しています。
+            </p>
+            <a class="pj-query" href=" https://docs.google.com/forms/d/e/1FAIpQLScig8-v8aIvBiOc-zlmrkCxs7-q8qWIpSzTI8UKiAPHE2kQig/viewform ">お問合わせ</a>
+        </footer>
+    </div>
+</body>
+
+</html>
