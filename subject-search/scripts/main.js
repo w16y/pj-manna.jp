@@ -169,6 +169,9 @@ const dataFilter = async() => {
         })
         .join('');
     */
+    /*     const gtag_value = { 'subject_text': subject_text, 'name_value': name_value };
+        gtag('event', 'click', { 'event_category': 'onclick', 'event_label': '授業検索ボタン', 'value': gtag_value });
+     */
     draw(filtered_data);
 };
 //画面読み込み後実行
