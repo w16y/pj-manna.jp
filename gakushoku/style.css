@@ -2,6 +2,10 @@ h3{
         /*線の種類（実線） 太さ 色*/
         border-bottom:1.4px solid rgb(222, 222, 222);
     }
+
+ h3.title_0{
+  margin-top: 12px;
+}
     
 h3.title_1{
   margin-top: 12px;
@@ -92,6 +96,12 @@ div.image-contents:after{
 @media screen and (max-width: 768px) {
   h3{
     font-size: 20px;
+  }
+  h4{
+    font-size: 22px;
+  }
+  p{
+    font-size: 16px;
   }
   figure {
     margin: 0px 7px 20px 0px; /* 外側の余白 */
