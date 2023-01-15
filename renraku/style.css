@@ -19,83 +19,9 @@ h5.title{
   margin-top: 18px;
 }
 
-    .Table {
-        width: 100%;
-        border: solid 1px #ccc;
-        border-collapse: collapse;
-        font-size: 16px;
-      }
-      @media screen and (max-width: 768px) {
-        .Table {
-          font-size: 12px;
-        }
-      }
-      .Table-Head {
-        background: rgb(241, 241, 241);
-      }
-      .Table-Head-Row-Cell {
-        border: solid 1px #ccc;
-        padding-top: 0.75em;
-        padding-bottom: 0.75em;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-      }
-      .Table-Body {
-        background: #fff;
-      }
-      .Table-Body-Row-Cell {
-        border: solid 1px #ccc;
-        padding-top: 0.75em;
-        padding-bottom: 0.75em;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-      }
-
-.daily_menu{
-    margin: 15px 0px 15px 0px; /* 上下の余白 */
-}
-
-figure{
-    margin: 0px 10px 20px 0px; /* 外側の余白 */
-    background-color: #FFF;
-    width: 32%;
-    float:left;
-}
-
-figure img{
-    display:block; /* 余白なし */
-    margin: 15px 0px 10px 0px; /* 下だけ10px余白 */
-    width: 95%;
-    border:1px solid #ccc;
-    border-radius: 5px;
-}
-
-figcaption{
-    font-size: 1.0em;
-    text-align:left;
-    padding: 0.25em 0.75em;
-    border-left: solid 4px #f17c67;/*左線*/
-    height: 66px;
-}
-
 .menu_title{
   margin: 2px 0px 2px 0px;
 }
-.menu_price{
-  font-size: 1.1em;
-}
-
-@media screen and (max-width: 768px) {
-  figure img {
-    width: 100%;
-  }
-}
-
-div.image-contents:after{
-    content: "";
-    display: block;
-    clear: both;
-} 
 
 @media screen and (max-width: 768px) {
   h3{
@@ -106,18 +32,5 @@ div.image-contents:after{
   }
   p{
     font-size: 16px;
-  }
-  figure {
-    margin: 0px 7px 20px 0px; /* 外側の余白 */
-    width: 48%;
-  }
-  figure img {
-    width: 100%;
-  }
-  figcaption{
-    font-size: 14px;
-    padding: none;
-    border-left: none;
-    height: none;
   }
 }
