@@ -14,4 +14,8 @@
 - [学年暦](./calendar/)
 - [学食メニュー](./gakushoku/)
 - [各施設連絡先](./renraku/)
+- [課外活動一覧](https://sites.google.com/view/manna-dantai)
+- [Moodle](https://moodle.kyoai.ac.jp/login/index.php)
+- [MIDS](https://mids3.cs.kyoai.ac.jp/up/faces/login/Com00501A.jsp)
+- [KCG](https://start.kyoai.ac.jp/start/auth/login)
 - [休講情報](http://zero3.kyoai.org/kyuko.php)
