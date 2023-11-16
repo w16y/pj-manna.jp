@@ -18,6 +18,7 @@
 - [Moodle](https://moodle.kyoai.ac.jp/login/index.php)
 - [MIDS(PC版)](https://mids3.cs.kyoai.ac.jp/up/faces/login/Com00501A.jsp)
 - [MIDS(スマホ版)](https://mids3.cs.kyoai.ac.jp/up/up/co/smartphone/login.jsp)
+- [Students' Web(ガイド)](https://www.kyoai.info/?page_id=2)
 - [KCG](https://start.kyoai.ac.jp/start/auth/login)
 - [休講情報](http://zero3.kyoai.org/kyuko.php)
 - [授業検索](./subject-search/)
