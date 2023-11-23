@@ -1,0 +1,36 @@
+h3{
+        /*線の種類（実線） 太さ 色*/
+        border-bottom:1.4px solid rgb(222, 222, 222);
+    }
+    
+h3.title_1{
+  margin-top: 12px;
+}
+
+h3.title_2{
+  margin-top: 24px;
+}
+
+h3.title_3{
+  margin-top: 26px;
+}
+
+h5.title{
+  margin-top: 18px;
+}
+
+.menu_title{
+  margin: 2px 0px 2px 0px;
+}
+
+@media screen and (max-width: 768px) {
+  h3{
+    font-size: 20px;
+  }
+  h5{
+    font-size: 18px;
+  }
+  p{
+    font-size: 16px;
+  }
+}
