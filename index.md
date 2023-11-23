@@ -10,6 +10,7 @@
   gtag('config', 'G-PKKNCFRTE2');
 </script>
 
+- [掲示板(Slack)](./maekokuslack/)
 - [学年暦](./calendar/)
 - [学食メニュー](./gakushoku/)
 - [各施設連絡先](./renraku/)
