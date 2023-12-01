@@ -13,7 +13,7 @@
 - [掲示板(Slack)](./maekokuslack/)
 - [学年暦](./calendar/)
 - [学食メニュー](./gakushoku/)
-- [各施設連絡先](./renraku/)
+- [学内施設について](./renraku/)
 - [課外活動団体一覧](https://sites.google.com/view/manna-dantai)
 - [各種申請書](./shinseisho/)
 - [Moodle](https://moodle.kyoai.ac.jp/login/index.php)
