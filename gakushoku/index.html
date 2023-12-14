@@ -133,24 +133,23 @@
         </div>
 
           <!-- データを埋め込むためのスクリプト -->
-  　 <script>
-    // エンドポイントからJSONデータを取得
-    fetch('https://script.google.com/macros/s/AKfycbyxWvkryROEalYRObM_TAGL0W0D3QIg2YkMEYYt1tLSjfOPp0wApcxEBpSJtbKZXg_T5w/exec')
-        .then(response => response.json())
-        .then(data => {
-            // （月）から始まるキーのデータをテーブルに反映
-            const tableRows = document.querySelectorAll('.table tbody tr');
-            tableRows.forEach((row, index) => {
-                const day = row.querySelector('th').textContent;
-                if (data.hasOwnProperty(`（${day}）定食`) && data.hasOwnProperty(`（${day}）丼`) && data.hasOwnProperty(`（${day}）スナック`)) {
-                    row.querySelector('td:nth-child(2)').textContent = data[`（${day}）定食`];
-                    row.querySelector('td:nth-child(3)').textContent = data[`（${day}）丼`];
-                    row.querySelector('td:nth-child(4)').textContent = data[`（${day}）スナック`]; // New column for スナック
-                }
-            });
-        })
-        .catch(error => console.error('エラー: ' + error));
-　　</script>
+  　<script>
+        // エンドポイントからJSONデータを取得
+        fetch('https://script.google.com/macros/s/AKfycbyxWvkryROEalYRObM_TAGL0W0D3QIg2YkMEYYt1tLSjfOPp0wApcxEBpSJtbKZXg_T5w/exec')
+            .then(response => response.json())
+            .then(data => {
+                // （月）から始まるキーのデータをテーブルに反映
+                const tableRows = document.querySelectorAll('.table tbody tr');
+                tableRows.forEach((row, index) => {
+                    const day = row.querySelector('th').textContent;
+                    if (data.hasOwnProperty(`（${day}）定食`) && data.hasOwnProperty(`（${day}）丼`)) {
+                        row.querySelector('td:nth-child(2)').textContent = data[`（${day}）定食`];
+                        row.querySelector('td:nth-child(3)').textContent = data[`（${day}）丼`];
+                    }
+                });
+            })
+            .catch(error => console.error('エラー: ' + error));
+    </script>
 
     <!-- データを埋め込むためのスクリプトここまで -->
 
