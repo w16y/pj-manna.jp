@@ -142,9 +142,9 @@
                 const tableRows = document.querySelectorAll('.table tbody tr');
                 tableRows.forEach((row, index) => {
                     const day = row.querySelector('th').textContent;
-                    if (data.hasOwnProperty(`（${day}）定食`) && data.hasOwnProperty(`（${day}）丼`)) {
-                        row.querySelector('td:nth-child(2)').textContent = data[`（${day}）定食`];
-                        row.querySelector('td:nth-child(3)').textContent = data[`（${day}）丼`];
+                    if (data.hasOwnProperty(`（${day}）日替わり１`) && data.hasOwnProperty(`（${day}）日替わり２`)) {
+                        row.querySelector('td:nth-child(2)').textContent = data[`（${day}）日替わり１`];
+                        row.querySelector('td:nth-child(3)').textContent = data[`（${day}）日替わり２`];
                     }
                 });
             })
